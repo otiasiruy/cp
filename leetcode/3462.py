@@ -12,7 +12,7 @@ class Solution:
         for i in range(len(rows)):
             for j in range(limits[i]):
                 heapq.heappush(pq, -rows[i][j])
-        sum = 0
+        ans = 0
         for i in range(k):
-            sum += (-heapq.heappop(pq))
-        return sum
+            ans += (-heapq.heappop(pq))
+        return ans
