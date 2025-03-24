@@ -12,7 +12,7 @@ class Solution:
                 ans.append([a, b])
                 a = i[0]
                 b = i[1]
-            elif a <= i[0] and i[0] <= b <= i[1]:
+            elif a <= i[0] <= b <= i[1]:
                 b = i[1]
             elif i[0] < a < i[1] and b < i[1]:
                 a = i[0]
