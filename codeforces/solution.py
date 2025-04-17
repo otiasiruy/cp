@@ -1,6 +1,5 @@
 import sys
 import threading
-from collections import Counter
 
 # Uncomment these lines for local testing
 #sys.stdin = open('input', 'r')
@@ -8,13 +7,13 @@ from collections import Counter
 
 input = lambda: sys.stdin.readline().rstrip()
 
-def inp():
+def int_input():
     return int(input())
 
 def inlt():
     return list(map(int, input().split()))
 
-def insr():
+def string_input():
     return list(input())
 
 def insrsplit(c):
@@ -24,10 +23,22 @@ def invr():
     return map(int, input().split())
 
 def solve():
-    cases = inp()
-    for _ in range(cases):
-        n = insr()
-        nums = inlt()
+    n = int_input()
+    arr = string_input()
+    repeated = True
+    ans = 0
+    while repeated:
+        found = False
+        for i in range(len(arr) - 1):
+            if arr[i] == arr[i + 1] and arr[i] != '1':
+                arr[i] = '1'
+                repeated = True
+                found = True
+                ans += 1
+        if not found:
+            repeated = False
+    print(ans)
+
 
 
 def main():
