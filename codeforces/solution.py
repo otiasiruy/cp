@@ -1,5 +1,6 @@
 import sys
 import threading
+from math import sqrt
 
 # Uncomment these lines for local testing
 #sys.stdin = open('input', 'r')
@@ -26,21 +27,27 @@ def map_split_ints():
     return map(int, input().split())
 
 def solve():
-    n = int_value()
-    s = string_value()
-    ans = []
-    l = 1
-    r = n
-    for i in range(len(s) - 1, -1, -1):
-        if s[i] == '>':
-            ans.append(str(r))
-            r -= 1
-        else:
-            ans.append(str(l))
-            l += 1
-    ans.append(str(l))
-    ans.reverse()
-    print(' '.join(ans))
+    def is_prime(y):
+        if y <= 1:
+            return False
+        if y == 2 or y == 3:
+            return True
+        if y % 2 == 0 or y % 3 == 0:
+            return False
+        i = 5
+        while i <= sqrt(y):
+            if y % i == 0 or y % (i + 2) == 0:
+                return False
+            i += 6
+        return True
+
+    x, k = list_ints()
+    if k > 1 and x > 1:
+        print("NO")
+    elif k == 1:
+        print("YES") if is_prime(x) else print("NO")
+    else:
+        print("YES") if k == 2 else print("NO")
 
 def main():
     # Set to True if problem has multiple test cases
