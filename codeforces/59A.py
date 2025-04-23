@@ -27,14 +27,14 @@ def map_split_ints():
     return map(int, input().split())
 
 def solve():
-    n, k = list_ints()
-    while k > 0:
-        if n % 10 == 0:
-            n /= 10
+    s = string_value()
+    l, u = 0, 0
+    for c in s:
+        if c.isupper():
+            u += 1
         else:
-            n -= 1
-        k -= 1
-    print(int(n))
+            l += 1
+    print(s.lower()) if l >= u else print(s.upper())
 
 def main():
     # Set to True if problem has multiple test cases
