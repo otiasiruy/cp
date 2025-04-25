@@ -27,12 +27,21 @@ def map_split_ints():
     return map(int, input().split())
 
 def solve():
+    n = int_value()
     s = string_value()
-    c = 0
+    a = 0
+    d = 0
     for i in s:
-        if i == '4' or i == '7':
-            c += 1
-    print("YES") if c == 4 or c == 7 else print("NO")
+        if i == 'A':
+            a += 1
+        else:
+            d += 1
+    if a > d:
+        print("Anton")
+    elif a < d:
+        print("Danik")
+    else:
+        print("Friendship")
 
 def main():
     # Set to True if problem has multiple test cases
