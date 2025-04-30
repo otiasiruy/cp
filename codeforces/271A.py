@@ -30,7 +30,10 @@ def map_split_ints():
 def solve():
     n = int_value()
     arr = list_ints()
-    print("EASY") if 1 not in arr else print("HARD")
+    while cnt != 4:
+        n += 1
+        cnt = len(Counter(str(n)))
+    print(n)
 
 if __name__ == "__main__":
     solve()
