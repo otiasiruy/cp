@@ -30,11 +30,14 @@ def map_split_ints():
 def solve():
 
     n = int_value()
+    cnt = 0
+    while n > 0:
+        p, q = list_ints()
+        if q - p > 1:
+            cnt += 1
+        n -= 1
+    print(cnt)
 
-    if 200 <= n < 300:
-        print("Success")
-    else:
-        print("Failure")
 
 if __name__ == "__main__":
     solve()

@@ -29,20 +29,15 @@ def map_split_ints():
 
 def solve():
 
-    n, t = list_ints()
-    s = string_value()
-    l = list(s)
-    while t > 0:
-        t -= 1
-        i = n - 2
-        while i >= 0:
-            if l[i] == 'B' and l[i + 1] == 'G':
-                l[i] = 'G'
-                l[i + 1] = 'B'
-                i -= 1
-            i -= 1
+    n = int_value()
+    cnt = 0
+    while n > 0:
+        p, q = list_ints()
+        if q - p > 1:
+            cnt += 1
+        n -= 1
+    print(cnt)
 
-    print(''.join(l))
 
 if __name__ == "__main__":
     solve()
