@@ -28,22 +28,20 @@ def map_split_ints():
     return map(int, input().split())
 
 def solve():
-    n = int_value()
-    def lucky(x):
-        for i in str(x):
-            if i != '4' and i != '7':
-                return False
-        return True
-    if lucky(n):
-        print("YES")
-        return
-    for i in range(4, n):
-        if lucky(i):
-            if n % i == 0:
-                print("YES")
-                return
-    print("NO")
-
+    s = string_value()
+    r = "hello"
+    n = len(s)
+    cnt = 0
+    i = 0
+    for l in r:
+        while i < n and l != s[i]:
+            i += 1
+        if i > n - 1:
+            break
+        if l == s[i]:
+            cnt += 1
+        i += 1
+    print("YES" if cnt == len(r) else "NO")
 
 if __name__ == "__main__":
     solve()
