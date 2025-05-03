@@ -28,8 +28,11 @@ def map_split_ints():
     return map(int, input().split())
 
 def solve():
-    a, b = list_ints()
-    print(pow(a + b, 2))
+    n = int_value()
+    if 400 % n == 0:
+        print(400 // n)
+        return
+    print(-1)
 
 if __name__ == "__main__":
     solve()
