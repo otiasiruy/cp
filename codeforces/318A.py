@@ -1,9 +1,8 @@
 import sys
-from collections import Counter
 
 try:
-    sys.stdin = open('input', 'r')
-    sys.stdout = open('output', 'w')
+    sys.stdin = open('../solution/input', 'r')
+    sys.stdout = open('../solution/output', 'w')
 except FileNotFoundError:
     pass
 
@@ -26,18 +25,17 @@ def map_split_ints():
     return map(int, input().split())
 
 def solve():
-    n = int_value()
-    arr = list_ints()
-    c = Counter(arr)
-    l = list(c.values())
-    l.sort()
-    if len(l) > 2:
-        print(l[0] + l[1])
-    elif len(l) == 2:
-        print(l[0])
+    n, k = list_ints()
+    if n % 2 == 0:
+        if k <= n // 2:
+            print(2 * (k - 1) + 1)
+        else:
+            print(2 * (k - (n//2)))
     else:
-        print(0)
-
+        if k <= n // 2 + 1:
+            print(2 * (k - 1) + 1)
+        else:
+            print(2 * (k - (n//2 + 1)))
 
 if __name__ == "__main__":
     solve()
