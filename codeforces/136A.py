@@ -3,8 +3,8 @@ import sys
 from collections import Counter
 
 try:
-    sys.stdin = open('input', 'r')
-    sys.stdout = open('output', 'w')
+    sys.stdin = open('../solution/input', 'r')
+    sys.stdout = open('../solution/output', 'w')
 except FileNotFoundError:
     pass
 
