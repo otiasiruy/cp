@@ -1,8 +1,5 @@
-import bisect
 import os
 import sys
-from collections import Counter, deque
-from math import ceil
 
 if os.path.exists('input'):
     sys.stdin = open('input', 'r')
