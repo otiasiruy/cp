@@ -2,9 +2,9 @@ import os
 import sys
 from collections import defaultdict
 
-if os.path.exists('input'):
-    sys.stdin = open('input', 'r')
-    sys.stdout = open('output', 'w')
+if os.path.exists('../solution/input'):
+    sys.stdin = open('../solution/input', 'r')
+    sys.stdout = open('../solution/output', 'w')
 
 def solve():
     n, m, a, b = list(map(int, input().split()))
