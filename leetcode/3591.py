@@ -1,5 +1,5 @@
 from math import sqrt
-from typing import List
+from typing import List, Counter
 
 
 class Solution:
